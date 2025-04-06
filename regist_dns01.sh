@@ -21,5 +21,5 @@ ${certbot_path} certonly --manual --preferred-challenges=dns \
 --manual-cleanup-hook "${python_path} ${hook_script} DELETE ${id} ${pwd}" \
 -d ${domain} -d *.${domain} \
 --server https://acme-v02.api.letsencrypt.org/directory \
---agree-tos -m ${email} \
---manual-public-ip-logging-ok
+--agree-tos -m ${email} --key-type rsa
+#--manual-public-ip-logging-ok
